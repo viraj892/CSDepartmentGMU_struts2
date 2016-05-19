@@ -1,0 +1,22 @@
+footer
+{
+	text-align: center;
+	height:110px;
+	float: bottom;
+}
+#footer_text
+{
+	float: left;
+	margin: 20px;
+	position: relative;
+	top: 25%;
+	color: black;
+	margin-top: 45px;
+}
+#footer_img
+{
+	float: right;
+	/*display: inline;*/
+	width: 110px;
+	margin: 20px;
+}

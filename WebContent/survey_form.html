@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="style_common.css">
+<link rel="stylesheet" type="text/css" href="style_survey_form.css">
+<link rel="stylesheet" type="text/css" href="jquery/jquery-ui.css">
+<link rel="stylesheet" type="text/css"
+	href="jquery/jquery-ui.structure.css">
+<link rel="stylesheet" type="text/css"
+	href="jquery/jquery-ui.theme.css">
+<script type="text/javascript" src="jquery/jquery.js"></script>
+<script type="text/javascript" src="jquery/jquery-ui.js"></script>
+<script type="text/javascript" src="survey_form.js"></script>
+</head>
+<body onload="greeting()">
+	<header>
+		<h1>Student Survey for GMU</h1>
+	</header>
+	<section>
+		<h3 id="greeting_message"></h3>
+		<p id="change_user_cookie">
+			If this is not you, click <a id="wrong_user_link"
+				href="javascript:void(0);">here</a>
+		</p>
+		<form name="survey_form1" action="process" onsubmit="return validate()">
+			<fieldset>
+				<legend>Personal Information</legend>
+				<table>
+					<tr>
+						<td><label class="field">Name:</label></td>
+						<td><label class="field">Address:</label></td>
+						<td><label class="field">Zip:</label></td>
+					</tr>
+					<tr>
+						<td><input type="text" name="name" autocomplete="on" required></td>
+						<td><input type="text" name="address" autocomplete="on"></td>
+						<td><input type="number" name="zip" autocomplete="on">
+							<div id="zip_error" class="error"></div></td>
+
+					</tr>
+					<tr>
+						<td><label class="field">City:</label></td>
+						<td><label class="field">State:</label></td>
+						<td><label class="field">Phone Number:</label></td>
+					</tr>
+					<tr>
+						<td><input name="city" class="auto_populate_span"></input></td>
+						<td><input name="state" class="auto_populate_span"></input></td>
+						<td><input type="number" name="phone" autocomplete="on"
+							required></td>
+					</tr>
+
+					<tr>
+						<td><label class="field">E-mail:</label></td>
+						<td><label class="field">Personal URL:</label></td>
+						<td><label class="field">Date of Survey:</label></td>
+					</tr>
+					<tr>
+						<td><input type="email" name="email" autocomplete="on"
+							placeholder="me@domain.com" required></td>
+						<td><input type="url" name="url"
+							placeholder="Personal web page or blog"></td>
+						<td><input type="date" name="date_of_survey"></td>
+					</tr>
+					<tr>
+						<td><label class="field">High School Graduation Date:</label></td>
+						<td><label class="field">Data:</label></td>
+						<td><label class="field">ID:</label></td>
+					</tr>
+					<tr>
+						<td><input list="month" name="grad_month"
+							placeholder="Select Month"> <datalist id="month">
+								<option value="January">
+								<option value="February">
+								<option value="March">
+								<option value="April">
+								<option value="May">
+								<option value="June">
+								<option value="July">
+								<option value="August">
+								<option value="September">
+								<option value="October">
+								<option value="November">
+								<option value="December">
+							</datalist> <input type="number" name="grad_year" placeholder="yyyy"
+							min="1900"></td>
+						<td><input type="text" name="data"
+							placeholder="Enter 10 numbers between 1 to 100 separated by commas">
+							<div id="data_error" class="field_error"></div></td>
+
+						<td><input type="text" name="id">
+						<div id="id_error" class="field_error"></div></td>
+
+					</tr>
+					
+					<!-- <tr id="calculated_avg_row">
+						<td><label class="field">Average:</label></td>
+						<td><span id="calculated_avg_value"></span></td>
+					</tr>
+					<tr id="calculated_max_row">
+						<td><label class="field">Maximum:</label></td>
+						<td><span id="calculated_max_value"></span></td>
+					</tr> -->  
+				</table>
+			</fieldset>
+			<br>
+			<fieldset>
+				<legend>Survey Information</legend>
+				<table>
+					<tr>
+						<td><label id="survey_info_label1" class="field">What
+								did you like most about the college?</label></td>
+						<td><label id="survey_info_label2" class="field">How
+								did you find out about GMU?</label></td>
+						<td><label id="survey_info_label3" class="field">How
+								likely are you to recommend GMU to others?</label></td>
+					</tr>
+					<tr>
+						<td><input type="checkbox" name="preference" value="students">Students</td>
+						<td><input type="radio" name="found" value="friends">Friends</td>
+						<td><input list="recommend" name="recommend"
+							placeholder="Select an answer"> <datalist id="recommend">
+								<option value="Very likely">
+								<option value="Likely">
+								<option value="Unlikely">
+							</datalist></td>
+					</tr>
+					<tr>
+						<td><input type="checkbox" name="preference" value="location">Location</td>
+						<td><input type="radio" name="found" value="tv">Television</td>
+					</tr>
+					<tr>
+						<td><input type="checkbox" name="preference" value="campus">Campus</td>
+						<td><input type="radio" name="found" value="internet">Internet</td>
+					</tr>
+					<tr>
+						<td><input type="checkbox" name="preference"
+							value="atmosphere">Atmosphere</td>
+						<td><input type="radio" name="found" value="other">Other</td>
+					</tr>
+					<tr>
+						<td><input type="checkbox" name="preference" value="dorm">Dorm
+							Rooms</td>
+					</tr>
+					<tr>
+						<td><input type="checkbox" name="preference" value="sports">Sports</td>
+					</tr>
+					<tr>
+						<td><label id="survey_info_label" class="field">Additional
+								Comments:</label></td>
+					</tr>
+					<tr>
+						<td><textarea name="comments" rows="4" cols="50" maxLength="500"></textarea></td>
+					</tr>
+				</table>
+			</fieldset>
+			<br> <input id="submit_button" type="submit" value="submit">
+			<button id="reset_button" class="reset_btn">Reset</button>
+		</form>
+	</section>
+	<p>
+		<a id="back_to_home" href="homepage.html">Back to Home</a>
+	</p>
+	<br>
+	<br>
+	<div id="error_modal" style="display: none;">
+		<p class="error">Errors on the page!</p>
+	</div>
+	<footer>
+		<span>
+			<p id="footer_text">Created by Viraj Shah</p>
+		</span> <span> <a href="https://www2.gmu.edu/"> <img
+				id="footer_img" src="GMURGB.jpg">
+		</a>
+		</span>
+	</footer>
+</body>
+</html>

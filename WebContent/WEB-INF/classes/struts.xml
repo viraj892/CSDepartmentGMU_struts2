@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+    <struts>
+    	<!-- For logging messages -->
+    	<constant name="struts.devMode" value="true" />
+    	
+    	<package name="controller_actions" extends="struts-default">
+    		<action name="process" class="controller.StudentBeanAction" method="process">
+    			<result name="simple" type="dispatcher">/SimpleAcknowledgment.jsp</result>
+    			<result name="winner" type="dispatcher">/WinnerAcknowledgement.jsp</result>
+    		</action>
+    		<action name="populateStudentDetails" class="controller.StudentBeanAction" method="populateStudentDetails">
+    			<result name="found" type="dispatcher">/StudentDetails.jsp</result>
+    			<result name="not_found" type="dispatcher">/NoSuchStudent.jsp</result>
+    		</action>
+    	</package>
+    </struts>

@@ -1,0 +1,84 @@
+fieldset
+{
+	min-width: 550px;
+	margin: 5px;
+}
+legend
+{
+	font-size: 20px;
+}
+/* label.field
+{
+	text-align: right;
+	min-width: 110px;
+	float: right;
+	font-weight: bold;
+} */
+label#survey_info_label
+{
+	float:left;
+}
+/* input, span.auto_populate_span
+{
+	float: left;
+	margin: 5px;
+} */
+input.auto_populate_span
+{
+	margin-top: 10px;
+}
+input[type="text"], input[type="number"], input[type="url"], input[type="date"], input[type="email"]
+{
+	width: 300px;
+}
+#data_error, .field_error
+{
+	color: red;
+}
+.error
+{
+	color: red
+}
+.name_error, .address_error
+{
+	color: red;
+}
+tr#calculated_avg_row, tr#calculated_max_row
+{
+	display:none;
+}
+td
+{
+	padding: 2px;
+	padding-right:40px;
+}
+fieldset tr
+{
+	clear: both;
+	padding: 5px;
+}
+button.reset_btn
+{
+	margin: 5px;
+    margin-left: 20px;
+}
+/*td label
+{
+	padding-top: 10px;
+}*/
+input[list="month"]
+{
+	width: 200px;
+}
+input[name="grad_year"]
+{
+	width: 85px;
+}
+a#back_to_home
+{
+	float: right;
+}
+/*td input[type="checkbox"]
+{
+	min-width: 120px;
+}*/

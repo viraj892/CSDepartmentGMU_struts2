@@ -1,0 +1,48 @@
+header
+{
+	background-color: #A0C9C1;
+	line-height: 100px;
+	margin:auto;
+	text-align: center;
+}
+h1
+{
+	margin: auto;
+	vertical-align: middle;
+	color:blue;
+	text-shadow: 3px 3px 5px grey;
+}
+h3#greeting_message
+{
+	text-align: center;
+}
+p#change_user_cookie
+{
+	text-align: center;
+}
+body{
+	background-color: #E4E6D7
+}
+footer
+{
+	text-align: center;
+	background-color: #A0C9C1;
+	height:110px;
+	float: bottom;
+}
+#footer_text
+{
+	float: left;
+	margin: 20px;
+	position: relative;
+	top: 25%;
+	color: white;
+	margin-top: 45px;
+}
+#footer_img
+{
+	float: right;
+	/*display: inline;*/
+	width: 110px;
+	margin: 20px;
+}
